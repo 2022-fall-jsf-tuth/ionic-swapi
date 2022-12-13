@@ -18,7 +18,7 @@ export class HomePage implements OnInit {
         this.planets = [
           ...this.planets
           , ...data.results.map(x => x.name)
-        ].sort();
+        ].sort((a, b) => a.localeCompare(b));
       }
       , error: err => {
         console.error(err);
